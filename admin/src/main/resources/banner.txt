@@ -1,4 +1,4 @@
-Application Version: ${core.version}
+Application Version: 0.0.1
 Spring Boot Version: ${spring-boot.version}
 ////////////////////////////////////////////////////////////////////
 //                       *             *                          //
