@@ -43,6 +43,11 @@
             <version>${core.version}</version>
 
         </dependency>
+        <dependency>
+            <groupId>com.mainframe</groupId>
+            <artifactId>crm</artifactId>
+            <version>${core.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

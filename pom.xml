@@ -32,6 +32,7 @@
         <module>quartz</module>
         <module>generator</module>
         <module>common</module>
+        <module>crm</module>
     </modules>
     <packaging>pom</packaging>
 
