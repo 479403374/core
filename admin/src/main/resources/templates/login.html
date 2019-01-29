@@ -35,20 +35,21 @@
                     <div class="m-b"></div>
                     <h4>欢迎使用 <strong>金玮 后台管理系统</strong></h4>
                     <ul class="m-b">
-                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> SpringBoot</li>
-                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Mybatis</li>
-                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Shiro</li>
-                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Thymeleaf</li>
-                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Bootstrap</li>
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> 客户关系管理</li>
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> 企业资源管理</li>
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> 数据报表管理</li>
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> 审批流程管理</li>
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> 企业员工管理</li>
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> 。。。。。。</li>
                     </ul>
-                    <strong>还没有账号？ <a href="#">立即注册&raquo;</a></strong>
+                    <!--<strong>还没有账号？ <a href="#">立即注册&raquo;</a></strong>-->
                 </div>
             </div>
             <div class="col-sm-5">
                 <form id="signupForm">
                     <h4 class="no-margins">登录：</h4>
-                    <input type="text"     name="username" class="form-control uname"     placeholder="用户名" value="admin"    />
-                    <input type="password" name="password" class="form-control pword m-b" placeholder="密码"   value="admin123" />
+                    <input type="text"     name="username" class="form-control uname"     placeholder="用户名" />
+                    <input type="password" name="password" class="form-control pword m-b" placeholder="密码" />
 					<div class="row" th:if="${captchaEnabled==true}">
 						<div class="col-xs-6">
 						    <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5">
@@ -67,7 +68,7 @@
         <div class="signup-footer">
             <div class="pull-left">
                 &copy; 2018 All Rights Reserved. JinWei <br>
-                <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">粤ICP备18046899号</a><br>
+                <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">沪ICP备15802101516号</a><br>
             </div>
         </div>
     </div>
