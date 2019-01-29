@@ -1,5 +1,5 @@
 CREATE TABLE `ry`.`t_crm_base_info`  (
-  `id` int(255) NOT NULL COMMENT '主键',
+  `id` int(255) NOT NULL auto_increment COMMENT '主键',
   `name` varchar(255) NULL COMMENT '客户名称',
   `code` varchar(255) NULL COMMENT '客户编码',
   `org_type` varchar(255) NULL COMMENT '组织类型(是人还是企业)',
