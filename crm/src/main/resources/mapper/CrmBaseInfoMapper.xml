@@ -18,14 +18,34 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </resultMap>
 	
 	<sql id="selectCrmBaseInfoVo">
-        select id, name, code, org_type, custom_contact, custom_contact_phone, contact, contact_phone, type, status from t_crm_base_info
+        select id,
+               name,
+               code,
+               org_type,
+               custom_contact,
+               custom_contact_phone,
+               contact,
+               contact_phone,
+               type,
+               status
+        from t_crm_base_info
     </sql>
 	
     <select id="selectCrmBaseInfoList" parameterType="CrmBaseInfo" resultMap="CrmBaseInfoResult">
-        <include refid="selectCrmBaseInfoVo"/>
+        select id,
+               name,
+               code,
+               (select dict_label from sys_dict_data data where data.dict_type = 'crm_org_type' and data.dict_value = baseInfo.org_type) as org_type,
+               custom_contact,
+               custom_contact_phone,
+               contact,
+               contact_phone,
+               type,
+               (select dict_label from sys_dict_data data where data.dict_type = 'crm_cor_status' and  data.dict_value = baseInfo.status) as status
+        from t_crm_base_info baseInfo
         <where>  
             <if test="id != null "> and id = #{id}</if>
-             <if test="name != null  and name != '' "> and name = #{name}</if>
+             <if test="name != null  and name != '' "> and name like CONCAT('%',#{name},'%')</if>
              <if test="code != null  and code != '' "> and code = #{code}</if>
              <if test="orgType != null  and orgType != '' "> and org_type = #{orgType}</if>
              <if test="customContact != null  and customContact != '' "> and custom_contact = #{customContact}</if>
@@ -33,7 +53,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
              <if test="contact != null  and contact != '' "> and contact = #{contact}</if>
              <if test="contactPhone != null  and contactPhone != '' "> and contact_phone = #{contactPhone}</if>
              <if test="type != null  and type != '' "> and type = #{type}</if>
-             <if test="status != null  and status != '' "> and status = #{status}</if>
+             <if test="status != null  and status != '' "> and baseInfo.status = #{status}</if>
          </where>
     </select>
     

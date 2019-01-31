@@ -11,15 +11,19 @@
 					<div class="select-list">
 						<ul>
 							<li>
-								客户名称：<input type="text" name="name"/>
+								客户名称：<input type="text" name="name" placeholder="模糊搜索"/>
 							</li>
 
 							<li>
-								客户编码：<input type="text" name="code"/>
+								客户编码：<input type="text" name="code" placeholder="精确搜索"/>
 							</li>
 
 							<li>
-								合作状态：<input type="text" name="status"/>
+								<span>合作状态：<select name="status" th:with="type=${@dict.getType('crm_cor_status')}">
+                                                <option value=""></option>
+                                                <option th:each="dict : ${type}" th:text="${dict.dictLabel}" th:value="${dict.dictValue}"></option>
+                                            </select>
+                                </span>
 							</li>
 
 							<li>
@@ -101,17 +105,12 @@
 				},
 				{
 					field : 'contact', 
-					title : '',
+					title : '我方联系人',
 					sortable: true
 				},
 				{
 					field : 'contactPhone', 
 					title : '我方联系人联系方式',
-					sortable: true
-				},
-				{
-					field : 'type', 
-					title : '类别(是客户还是供应商)',
 					sortable: true
 				},
 				{
