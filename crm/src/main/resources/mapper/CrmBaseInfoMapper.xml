@@ -54,7 +54,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
              <if test="contactPhone != null  and contactPhone != '' "> and contact_phone = #{contactPhone}</if>
              <if test="type != null  and type != '' "> and type = #{type}</if>
              <if test="status != null  and status != '' "> and baseInfo.status = #{status}</if>
-         </where>
+        </where>
     </select>
     
     <select id="selectCrmBaseInfoById" parameterType="Integer" resultMap="CrmBaseInfoResult">

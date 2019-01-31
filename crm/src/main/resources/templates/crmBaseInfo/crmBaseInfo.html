@@ -8,6 +8,7 @@
 		<div class="row">
 			<div class="col-sm-12 search-collapse">
 				<form id="formId">
+                    <input type="hidden" name="type" id="type" th:value="${type}">
 					<div class="select-list">
 						<ul>
 							<li>
@@ -70,6 +71,12 @@
                 modalName: "客户关系管理",
 				search: false,
 		        showExport: true,
+                queryParams: function (params) {
+                    var temp = {
+                        type : $("#type").val()
+                    };
+                    return temp;
+                },
                 columns: [{
 		            checkbox: true
 		        },
@@ -129,6 +136,7 @@
 		            }
 		        }]
             };
+            debugger;
             $.table.init(options);
         });
     </script>

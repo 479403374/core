@@ -35,9 +35,10 @@ public class CrmBaseInfoController extends BaseController
 	private ICrmBaseInfoService crmBaseInfoService;
 	
 	@RequiresPermissions("system:crmBaseInfo:view")
-	@GetMapping()
-	public String crmBaseInfo()
+	@GetMapping("/{type}")
+	public String crmBaseInfo(@PathVariable("type") Integer type, ModelMap mmap)
 	{
+		mmap.put("type", type);
 	    return prefix + "/crmBaseInfo";
 	}
 	
