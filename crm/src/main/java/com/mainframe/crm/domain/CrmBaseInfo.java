@@ -26,7 +26,7 @@ public class CrmBaseInfo extends BaseEntity
 	private String customContact;
 	/** 联系人联系方式 */
 	private String customContactPhone;
-	/**  */
+	/** 我方联系人 */
 	private String contact;
 	/** 我方联系人联系方式 */
 	private String contactPhone;
