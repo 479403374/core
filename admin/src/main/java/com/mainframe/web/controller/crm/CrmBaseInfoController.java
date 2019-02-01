@@ -72,9 +72,10 @@ public class CrmBaseInfoController extends BaseController
 	/**
 	 * 新增客户关系管理
 	 */
-	@GetMapping("/add")
-	public String add()
+	@GetMapping("/add/{id}")
+	public String add(@PathVariable("id") Integer type,ModelMap mmap)
 	{
+		mmap.put("type", type);
 	    return prefix + "/add";
 	}
 	
